@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git([url: 'https://github.com/kevalnagda/movieapp.git', branch: 'main', credentialsId: 'git'])
+        git([url: 'https://github.com/immadiuttej/docker_example.git', branch: 'main', credentialsId: 'git'])
  
       }
     }
