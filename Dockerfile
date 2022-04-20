@@ -4,7 +4,8 @@ FROM golang:alpine AS builder
 ENV GO111MODULE=on \
     CGO_ENABLED=0 \
     GOOS=linux \
-    GOARCH=amd64
+    GOARCH=amd64 \
+    GOFLAGS=-buildvcs=false
 
 # Move to working directory /build
 WORKDIR /build
@@ -19,7 +20,7 @@ COPY . .
 
 
 # Build the application
-RUN go build -o .
+RUN go build -o main .
 
 # Move to /dist directory as the place for resulting binary folder
 WORKDIR /dist
